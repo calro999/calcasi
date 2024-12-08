@@ -22,7 +22,14 @@
 }
 
 body {
-    background: #0D0D0D url('https://i.imgur.com/SaOPx0Z.png') repeat;
+    background-color: #0D0D0D;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+        radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+    background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+    background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
     animation: space-background 1000s linear infinite;
     color: #FF00FF;
     font-family: 'Arial', sans-serif;
@@ -66,7 +73,10 @@ h1 {
     text-align: center;
     color: #00FFFF;
     font-size: 2.5em;
-    text-shadow: 0 0 10px #00FFFF;
+    text-shadow: 
+        0 0 10px #00FFFF,
+        0 0 20px #00FFFF,
+        0 0 30px #00FFFF;
     margin: 20px 0;
     width: 100%;
 }
@@ -74,24 +84,31 @@ h1 {
 .casino-card {
     background: rgba(26, 26, 26, 0.9);
     border-radius: 10px;
-    box-shadow: 0 0 15px #FF00FF;
+    box-shadow: 
+        0 0 15px #FF00FF,
+        inset 0 0 15px rgba(255, 0, 255, 0.5);
     padding: 30px;
     width: 100%;
     max-width: 800px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
 .casino-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 0 25px #FF00FF;
+    box-shadow: 
+        0 0 25px #FF00FF,
+        inset 0 0 25px rgba(255, 0, 255, 0.7);
 }
 
 .casino-name {
     color: #00FFFF;
     font-size: 1.8em;
     margin-bottom: 15px;
-    text-shadow: 0 0 5px #00FFFF;
+    text-shadow: 
+        0 0 5px #00FFFF,
+        0 0 10px #00FFFF;
 }
 
 .casino-description {
@@ -99,6 +116,7 @@ h1 {
     line-height: 1.6;
     margin-bottom: 20px;
     white-space: pre-line;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .casino-button {
@@ -111,11 +129,37 @@ h1 {
     transition: all 0.3s ease;
     text-transform: uppercase;
     font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
 }
 
 .casino-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+    box-shadow: 
+        0 0 15px rgba(255, 0, 255, 0.5),
+        0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+.casino-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    from {
+        transform: rotate(45deg) translateX(-100%);
+    }
+    to {
+        transform: rotate(45deg) translateX(100%);
+    }
 }
 
 /* レスポンシブデザイン */
