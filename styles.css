@@ -6,13 +6,19 @@
 
 @keyframes shooting-star {
     from {
-        transform: translateX(0) translateY(0) rotate(45deg);
+        transform: translateX(200px) translateY(-200px);
         opacity: 1;
     }
     to {
-        transform: translateX(-500px) translateY(500px) rotate(45deg);
+        transform: translateX(-1000px) translateY(1000px);
         opacity: 0;
     }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -20,8 +26,6 @@ body {
     animation: space-background 1000s linear infinite;
     color: #FF00FF;
     font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 20px;
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
@@ -37,32 +41,33 @@ body::after {
     background: white;
     box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
     border-radius: 50%;
-    top: -10px;
-    right: -10px;
+    top: 0;
+    right: 0;
     animation: shooting-star 3s linear infinite;
 }
 
 body::after {
     animation-delay: 1.5s;
     top: 30%;
+    right: 30%;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    font-family: 'Arial', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 30px;
 }
 
 h1 {
     text-align: center;
     color: #00FFFF;
-    margin-bottom: 40px;
     font-size: 2.5em;
     text-shadow: 0 0 10px #00FFFF;
+    margin: 20px 0;
     width: 100%;
 }
 
@@ -70,12 +75,11 @@ h1 {
     background: rgba(26, 26, 26, 0.9);
     border-radius: 10px;
     box-shadow: 0 0 15px #FF00FF;
-    padding: 20px;
-    margin-bottom: 30px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 30px;
     width: 100%;
     max-width: 800px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .casino-card:hover {
@@ -107,7 +111,6 @@ h1 {
     transition: all 0.3s ease;
     text-transform: uppercase;
     font-weight: bold;
-    margin: 0 auto;
 }
 
 .casino-button:hover {
@@ -126,8 +129,8 @@ h1 {
     }
 
     .casino-card {
-        padding: 15px;
-        margin: 15px;
+        padding: 20px;
+        margin: 10px;
     }
 
     .casino-name {
