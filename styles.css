@@ -1,36 +1,74 @@
-body {
-    background-color: #0D0D0D;
-    color: #FF00FF;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
     font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 20px;
-}
-
-.product-card {
-    background: #1a1a1a;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 10px;
-    max-width: 800px;
-    box-shadow: 0 0 10px #FF00FF;
-}
-
-.button {
-    background: #FF00FF;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.button:hover {
-    background: #00FFFF;
 }
 
 h1 {
-    color: #00FFFF;
     text-align: center;
-    text-shadow: 0 0 10px #00FFFF;
+    color: #333;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+.casino-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.casino-card:hover {
+    transform: translateY(-5px);
+}
+
+.casino-name {
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.casino-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    white-space: pre-line;
+}
+
+.casino-button {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.casino-button:hover {
+    background-color: #2980b9;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .casino-card {
+        padding: 15px;
+    }
+
+    .casino-name {
+        font-size: 1.5em;
+    }
 }
